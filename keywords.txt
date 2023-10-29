@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map For EURK_Arduino
+#######################################
+
+#######################################
+# Functions (KEYWORD1)
+#######################################
+
+EURK_Arduino?  KEYWORD1
+EASY_KS0108	 KEYWORD1
+EASY_puts 	KEYWORD2
+EASY_putc 	KEYWORD2
+EASY_setxy	KEYWORD2
+EASY_putsxy	KEYWORD2
+EASY_print	KEYWORD2
+EASY_write	KEYWORD2
+EASY_putsxy	KEYWORD2
+	
