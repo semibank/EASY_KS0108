@@ -48,6 +48,12 @@ SSD1306을 KS0108 I2C GLCD로 사용하도록 수정하였습니다.
 
 
 
+
+   글자색과 배경색은 각각 color, bg로 지정되며 생략가능합니다. KS0108이므로 단색은 WHITE BLACK를 사용할 수 있습니다.
+
+   
+
+
    
    void EASY_puts(char *s, uint16_t color, uint16_t bg) ;
 
