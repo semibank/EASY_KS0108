@@ -19,14 +19,18 @@ SSD1306을 KS0108 I2C GLCD로 사용하도록 수정하였습니다.
 
 
 
-Adafruit-GFX 와 Adafruit_KS0108_kbv
+[Adafruit-GFX] 와 [Adafruit_KS0108_kbv]
 
 
 
 
 
-https://github.com/adafruit/Adafruit-GFX-Library 
-https://github.com/prenticedavid/Adafruit_KS0108_kbv 
+[https://github.com/adafruit/Adafruit-GFX-Library] 
+
+
+
+
+[https://github.com/prenticedavid/Adafruit_KS0108_kbv] 
 
 
 
