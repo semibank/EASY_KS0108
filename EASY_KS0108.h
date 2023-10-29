@@ -1,17 +1,9 @@
 /*
-  ÇÑ±Û ¶óÀÌºê·¯¸® '¾î¿ì·¯±â' ¾ÆµÎÀÌ³ë ¹öÀü 1.0
-  ¼³¸í : OLED µð½ºÇÃ·¹ÀÌ¸¦ »ç¿ëÇÏ´Â ¾ÆµÎÀÌ³ë ÇÁ·Î±×·¥¿¡¼­ ÇÑ±Û Ãâ·ÂÀ» ÀÚÀ¯·Ó°Ô ÇÏ±â À§ÇØ
-         ¸¸µé¾îÁ³´Ù.
-  »ç¿ë ¶óÀÌºê·¯¸® : Adafruit¿¡¼­ ¹èÆ÷ÇÑ OLED µð½ºÇÃ·¹ÀÌ¿ë ¶óÀÌºê·¯¸®ÀÎ
-                    Adafruit_GFX, Adafruit_SSD1306
-  »ç¿ë ¹æ¹ý : ¸ðµç (¼¼ °¡Áö) ¶óÀÌºê·¯¸®¸¦ '(»ç¿ëÀÚ)/¹®¼­/Arduino/libraries' Æú´õ¿¡ ¼³Ä¡ÇÏ°í,
-              ¼Ò½º ÆÄÀÏ¿¡¼­ EURK_Arduino.h Çì´õ ÆÄÀÏÀ» ÀÎÅ¬·çµåÇÑ ÈÄ¿¡,
-              µð½ºÇÃ·¹ÀÌ »óÈ²¿¡ ¸ÂÃç display ¿ÀºêÁ§Æ®¸¦ »ý¼ºÇÏ°í ³ª¼­,
-              ÀûÀýÇÑ ÇÑ±Û ¶óÀÌºê·¯¸® ÇÔ¼öµéÀ» È£ÃâÇÏ¸é µÈ´Ù.
-  ¹èÆ÷ : ¼÷¹¬¹Ì·¡Á¤º¸Àç´Ü ( http://sookmook.org )
-  ¸¸µç »ç¶÷ : ¼÷¹¬ Áö¿µ¹Î ( mailto://sookmook@sookmook.org )
-              feat. ¾Èº´À± ( mailto://hayansea@sookmook.org )
-  ¸¸µç ³¯Â¥ : 2018³â 4¿ù 24ÀÏ
+  í•œê¸€ ë¼ì´ë¸ŒëŸ¬ë¦¬ 'ì–´ìš°ëŸ¬ê¸°' ì•„ë‘ì´ë…¸ ë²„ì „ 1.0ì„ ì°¸ì¡°í•˜ì—¬ ë§Œë“¤ì—ˆìŒ
+  SSD1306 LCD ëŒ€ì‹   KS0108 GLCD I2Cìš©ìœ¼ë¡œ ì‚¬ìš©í•˜ë„ë¡ í•˜ê³  
+  lcd printëª…ë ¹ì— ë°˜ì „printìš© ì»¬ëŸ¬ë¥¼ ì§€ì •í•  ìˆ˜ ìžˆë„ë¡í•˜ì˜€ë‹¤.
+  ì¢…ì†ì‚¬ìš© ë¼ì´ë¸ŒëŸ¬ë¦¬ : Adafruit_GFX, Adafruit_KS0108_kbv  
+  ì›ë³¸í•œê¸€ë¼ì´ë¸ŒëŸ¬ë¦¬  : ìˆ™ë¬µ ì§€ì˜ë¯¼ ( mailto://sookmook@sookmook.org )
 */
 
 #ifndef __EASY_KS0108_H
@@ -24,7 +16,7 @@
 #include "Hangeul_Font.h"
 #include "ASCII_Font.h"
 
-/* 2¹ÙÀÌÆ® Á¶ÇÕÇü ÇÑ±ÛÀ» À§ÇÑ °ø¿ëÃ¼ */
+/* 2ë°”ì´íŠ¸ ì¡°í•©í˜• í•œê¸€ì„ ìœ„í•œ ê³µìš©ì²´ */
 #ifndef __HAN_UNION
 #define __HAN_UNION
 union HAN_UNION {
@@ -33,28 +25,28 @@ union HAN_UNION {
     word m : 5 ;
     word f : 5 ;
     word s : 1 ;
-  } a ; /* ÀÚ¸ð */
+  } a ; /* ìžëª¨ */
   struct {
     byte s ;
     byte f ;
-  } c ; /* ÄÚµå */
+  } c ; /* ì½”ë“œ */
 } ;
 #endif
 
-/* Çö´ë±¹¾î¿¡¼­ Ç¥Çö °¡´ÉÇÑ ¸ðµç ÇÑ±ÛÀÇ ¼ö = 11172 */
-/* (ÃÊ¼º 19 * Áß¼º 21 * Á¾¼º(¹ÞÄ§ ¾ø´Â °Í Æ÷ÇÔ) 28 */
+/* í˜„ëŒ€êµ­ì–´ì—ì„œ í‘œí˜„ ê°€ëŠ¥í•œ ëª¨ë“  í•œê¸€ì˜ ìˆ˜ = 11172 */
+/* (ì´ˆì„± 19 * ì¤‘ì„± 21 * ì¢…ì„±(ë°›ì¹¨ ì—†ëŠ” ê²ƒ í¬í•¨) 28 */
 #ifndef ALL_OF_HAN
 #define ALL_OF_HAN 11172
 #endif
 
-/* ÇÑ±Û ÄÚµå Á¤ÀÇ */
+/* í•œê¸€ ì½”ë“œ ì •ì˜ */
 #ifndef __HANCODE__DEFINE
 #define __HANCODE__DEFINE
 #define HANCODE_UTF_8       0
 #define HANCODE_EXTENED_KSC 1
 #endif
 
-/* À¯´ÏÄÚµå¿¡¼­ ÇÑ±ÛÀÇ ½ÃÀÛ À§Ä¡ */
+/* ìœ ë‹ˆì½”ë“œì—ì„œ í•œê¸€ì˜ ì‹œìž‘ ìœ„ì¹˜ */
 #ifndef UNICODE_HAN_BASE
 #define UNICODE_HAN_BASE 0xAC00
 #endif
