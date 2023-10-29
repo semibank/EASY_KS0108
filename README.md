@@ -1,4 +1,6 @@
 # EASY_KS0108
+종속라이브러리
+
 
 1.원저작자의 한글 라이브러리를 활용하였습니다 저작자 링크
   https://raw.githubusercontent.com/sookmook/EURK_Arduino
