@@ -1,8 +1,10 @@
 # EASY_KS0108
 
 GLCD128*64  KS0108 LCD 라이브러리 입니다
-원저작자 sookmook님의 한글 라이브러리를 활용하였습니다(https://raw.githubusercontent.com/sookmook/EURK_Arduino)
-SSD1306을 KS0108 I2C GLCD로 사용하도록 수정하였습니다. (KS0108 + MCP23017)
+원저작자 sookmook님의 한글 라이브러리를 활용하였습니다
+(https://raw.githubusercontent.com/sookmook/EURK_Arduino)
+SSD1306을 KS0108 I2C GLCD로 사용하도록 수정하였습니다. 
+(KS0108 + MCP23017)
 
 아래두개의 라이브러리를 함께 사용합니다.
 Adafruit-GFX 와 Adafruit_KS0108_kbv
