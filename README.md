@@ -12,7 +12,6 @@ https://github.com/adafruit/Adafruit-GFX-Library
 https://github.com/prenticedavid/Adafruit_KS0108_kbv
 
 
-
 1. SSD1306을 GLCD KS0108용으로 변경하였습니다
    #include <Adafruit_KS0108_kbv.h>
    //#include <Adafruit_SSD1306.h>
